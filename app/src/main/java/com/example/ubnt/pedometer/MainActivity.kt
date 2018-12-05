@@ -2,6 +2,7 @@ package com.example.ubnt.pedometer
 
 import android.content.ContentValues
 import android.content.Context
+import android.content.Intent
 import android.hardware.Sensor
 import android.hardware.SensorManager
 import android.support.v7.app.AppCompatActivity
@@ -93,8 +94,13 @@ class MainActivity : AppCompatActivity() {
         mBarChart.startAnimation()
         mBarChart.onBarClickedListener =
                 IOnBarClickedListener {
-                    Toast.makeText(applicationContext,"Hello",Toast.LENGTH_LONG).show()
+//                    Toast.makeText(applicationContext,"Hello",Toast.LENGTH_LONG).show()
+                    val intent:Intent =Intent();
+                    intent.setClass(this,AchieveActivity().javaClass)
+                    intent.putExtra("totalSteps",""+totalSteps);
+                    startActivity(intent);
                 }
+
 
         initData()
         initListener()
