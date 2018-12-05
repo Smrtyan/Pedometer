@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        tools:context=".MainActivity">
+    <LinearLayout
+            android:layout_gravity="center|top"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+    >
+        <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:src="@drawable/half_circle"/>
+            <TextView
+                    android:textSize="40sp"
+                    android:id="@+id/textview_step_count"
+                    android:text="0"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+        </RelativeLayout>
+
+        <TextView
+                android:id="@+id/textview_step_label"
+                android:textSize="30sp"
+                android:layout_gravity="bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="step"
+        />
+    </LinearLayout>
+    <LinearLayout
+            android:layout_marginTop="40sp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yesterday:"
+                android:layout_marginLeft="30sp"
+                android:layout_marginRight="40sp"
+                android:textAllCaps="false"
+        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView_yesterday"
+
+            android:text="0 step"
+        />
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:layout_marginLeft="30sp"
+                android:layout_marginRight="40sp"
+                android:text="Total:         "
+        />
+        <TextView
+                android:id="@+id/textView_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 step"
+        />
+    </LinearLayout>
+    <org.eazegraph.lib.charts.BarChart
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/barchart"
+            android:layout_width="match_parent"
+            android:layout_height="256dp"
+            android:padding="10dp"
+            app:egFixedBarWidth="true"
+            app:egBarWidth="20dp"
+            app:egLegendHeight="40dp"/>
+</LinearLayout>
